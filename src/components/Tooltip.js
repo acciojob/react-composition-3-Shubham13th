@@ -1,21 +1,23 @@
-import React from "react";
-import "./Tooltip.css";
+import { useState } from "react";
 
-const Tooltip = (props) => {
-    return (
-        <div>
-            <h2 className="tooltip">
-                Hover Over me
-                <div>{props.first}</div>
-            </h2>
+const Tooltip = ({ text, children }) => {
+  const [show, setShow] = useState(false);
 
-            <p className="tooltip">
-                Hover over me to see another tooltip
-                <div>{props.second}</div>
-            </p>
+  return (
+    <div
+      className="tooltip"
+      onMouseEnter={() => setShow(true)}
+      onMouseLeave={() => setShow(false)}
+    >
+      {children}
 
-        </div>
-    );
+      {show && (
+        <span className="tooltiptext">
+          {text}
+        </span>
+      )}
+    </div>
+  );
 };
 
 export default Tooltip;
