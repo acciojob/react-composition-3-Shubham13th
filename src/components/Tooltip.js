@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Tooltip = ({ text, children }) => {
   const [show, setShow] = useState(false);
 
-  const childrenArray = show 
+  const childrenArray = show
     ? [children.props.children, <div key="tooltip" className="tooltiptext">{text}</div>]
     : children.props.children;
 
