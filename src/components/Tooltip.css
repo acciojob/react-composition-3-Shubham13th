@@ -4,11 +4,10 @@
   cursor: pointer;
 }
 
-/* Tooltip content (the inner div) */
 .tooltip > div {
-  visibility: hidden;
-  opacity: 0;
-
+  opacity: 0;              /* visually hidden */
+  pointer-events: none;   /* prevent interaction */
+  
   position: absolute;
   top: 100%;
   left: 50%;
@@ -22,11 +21,10 @@
 
   transition: opacity 0.3s ease;
   white-space: nowrap;
-  z-index: 1;
 }
 
-/* Show tooltip on hover */
+/* On hover, make tooltip visible */
 .tooltip:hover > div {
-  visibility: visible;
   opacity: 1;
+  pointer-events: auto;
 }
