@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 const Tooltip = ({ text, children }) => {
   const [show, setShow] = useState(false);
@@ -10,12 +10,7 @@ const Tooltip = ({ text, children }) => {
       onMouseLeave={() => setShow(false)}
     >
       {children}
-
-      {show && (
-        <span className="tooltiptext">
-          {text}
-        </span>
-      )}
+      {show && <span className="tooltiptext">{text}</span>}
     </div>
   );
 };
