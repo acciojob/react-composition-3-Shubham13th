@@ -2,21 +2,20 @@ import React from "react";
 import "./Tooltip.css";
 
 const Tooltip = (props) => {
-  return (
-    <div>
-      <div className="tooltip-container">
-        <p>Hover Over me</p>
-        <span className="tooltip">{props.first}</span>
-      </div>
+    return (
+        <div>
+            <h2 className="tooltip">
+                Hover Over me
+                <div>{props.first}</div>
+            </h2>
 
-      <br />
+            <p className="tooltip">
+                Hover over me to see another tooltip
+                <div>{props.second}</div>
+            </p>
 
-      <div className="tooltip-container">
-        <p>Hover over me to see another tooltip</p>
-        <span className="tooltip">{props.second}</span>
-      </div>
-    </div>
-  );
+        </div>
+    );
 };
 
 export default Tooltip;
