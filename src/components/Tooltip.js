@@ -3,16 +3,19 @@ import React, { useState } from "react";
 const Tooltip = ({ text, children }) => {
   const [show, setShow] = useState(false);
 
-  const childrenArray = show
-    ? [children.props.children, <div key="tooltip" className="tooltiptext">{text}</div>]
-    : children.props.children;
+  // Detect tag name (h2, p, etc.)
+  const Tag = children.type;
 
-  return React.cloneElement(children, {
-    className: `${children.props.className || ""} tooltip`,
-    onMouseEnter: () => setShow(true),
-    onMouseLeave: () => setShow(false),
-    children: childrenArray,
-  });
+  return (
+    <Tag
+      className="tooltip"
+      onMouseEnter={() => setShow(true)}
+      onMouseLeave={() => setShow(false)}
+    >
+      {children.props.children}
+      {show && <div className="tooltiptext">{text}</div>}
+    </Tag>
+  );
 };
 
 export default Tooltip;
