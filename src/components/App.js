@@ -1,7 +1,7 @@
 import React from "react";
 import Tooltip from "./Tooltip";
 
-function App() {
+const App = () => {
   return (
     <div>
       <Tooltip text="Heading Tooltip">
@@ -11,9 +11,12 @@ function App() {
       <Tooltip text="Paragraph Tooltip">
         <p>Paragraph Text</p>
       </Tooltip>
+
+      <Tooltip text="Span Tooltip">
+        <span>Span Text</span>
+      </Tooltip>
     </div>
   );
-}
+};
 
 export default App;
-  

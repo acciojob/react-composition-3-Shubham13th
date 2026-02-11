@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-function Tooltip({ text, children }) {
+const Tooltip = ({ text, children }) => {
   const [visible, setVisible] = useState(false);
 
+  // Clone the child element (h2, p, span, etc.)
   return React.cloneElement(children, {
     className: "tooltip",
     onMouseEnter: () => setVisible(true),
@@ -14,6 +15,6 @@ function Tooltip({ text, children }) {
       </>
     )
   });
-}
+};
 
 export default Tooltip;
